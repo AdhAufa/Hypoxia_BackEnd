@@ -1,4 +1,4 @@
-FLASK_APP=run.py
+FLASK_APP=main.py
 FLASK_ENV=development
 
 JWT_SECRET=adh966
