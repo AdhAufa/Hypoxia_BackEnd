@@ -68,33 +68,43 @@ def calculate_hypoxia():
 
     #kategory
     category = 'Not Detected'
-    if(oxygen > 91 and heart > 101) :
-        category = 'Tachycardia'
-    elif(oxygen > 91 and heart < 60) :
-        category = 'Bradycardia'   
-    elif(oxygen > 91 and heart < 100 ) :
-        category = 'Normal'   
-    elif(oxygen < 90 and heart > 101) :
+    # if(oxygen > 91 and heart > 101) :
+    #     category = 'Tachycardia'
+    # elif(oxygen > 91 and heart < 60) :
+    #     category = 'Bradycardia'   
+    # elif(oxygen > 91 and heart < 100 ) :
+    #     category = 'Normal'   
+    # elif(oxygen < 90 and heart > 101) :
+    #     category = 'Mild Hypoxia'   
+    # elif(oxygen < 90 and heart < 60) :
+    #     category = 'Mild Hypoxia'   
+    # elif(oxygen < 90 and heart < 100) :
+    #     category = 'Mild Hypoxia'   
+    # elif(oxygen < 80 and heart > 101) :
+    #     category = 'Moderate Hypoxia'   
+    # elif(oxygen < 80 and heart < 60) :
+    #     category = 'Moderate Hypoxia'   
+    # elif(oxygen < 80 and heart < 100) :
+    #     category = 'Moderate Hypoxia'
+    # elif(oxygen < 65 and heart > 101) :
+    #     category = 'Severe Hypoxia'   
+    # elif(oxygen < 65 and heart < 60) :
+    #     category = 'Severe Hypoxia'   
+    # elif(oxygen < 65 and heart < 100) :
+    #     category = 'Severe Hypoxia'   
+    # else:
+    #     category = 'Not Detected'
+        
+    if(hypoxia_level > 90 and hypoxia_level <= 100) :
+        category = 'Normal'
+    elif(hypoxia_level > 80 and hypoxia_level <= 90) :
         category = 'Mild Hypoxia'   
-    elif(oxygen < 90 and heart < 60) :
-        category = 'Mild Hypoxia'   
-    elif(oxygen < 90 and heart < 100) :
-        category = 'Mild Hypoxia'   
-    elif(oxygen < 80 and heart > 101) :
+    elif(hypoxia_level > 65 and hypoxia_level <= 80) :
         category = 'Moderate Hypoxia'   
-    elif(oxygen < 80 and heart < 60) :
-        category = 'Moderate Hypoxia'   
-    elif(oxygen < 80 and heart < 100) :
-        category = 'Moderate Hypoxia'
-    elif(oxygen < 65 and heart > 101) :
-        category = 'Severe Hypoxia'   
-    elif(oxygen < 65 and heart < 60) :
-        category = 'Severe Hypoxia'   
-    elif(oxygen < 65 and heart < 100) :
+    elif(hypoxia_level <= 65) :
         category = 'Severe Hypoxia'   
     else:
         category = 'Not Detected'
-        
     # Return the output value as a JSON response
     return {'hypoxia': hypoxia_level, 'category' : category}
 
